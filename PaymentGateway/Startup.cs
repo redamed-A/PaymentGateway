@@ -1,14 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
+using BankService;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using PaymentGatewayRepository;
+using PaymentGatewayRepository.Operations;
+using PaymentGatewayService;
 
 namespace PaymentGateway
 {
@@ -24,6 +25,21 @@ namespace PaymentGateway
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // Here we add dbcontext to startup service configuration
+            services.AddDbContext<PaymentDbContext>(opts =>
+                opts.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddScoped<PaymentDbContext>();
+
+            // ADD Mediator DI
+            services.AddMediatR(typeof(Startup));
+
+            // Add AutoMapper DI
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<IPaymentRepository, PaymentRepository>();
+            services.AddScoped<IAcquiringBankService, AcquiringBankService>();
+
             services.AddControllers();
         }
 

@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BankService\BankService.csproj" />
+    <ProjectReference Include="..\PaymentGatewayModel\PaymentGatewayModel.csproj" />
+    <ProjectReference Include="..\PaymentGatewayRepository\PaymentGatewayRepository.csproj" />
+  </ItemGroup>
+
 </Project>
