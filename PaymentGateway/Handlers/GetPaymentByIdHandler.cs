@@ -23,8 +23,8 @@ namespace PaymentGateway.Handlers
         }
         public async Task<PaymentDetailsResponse> Handle(GetPaymentByIdQuery request, CancellationToken cancellationToken)
         {
-            var payments = await _paymentService.GetPaymentsAsync();
-            return _mapper.Map<PaymentDetailsResponse>(payments);
+            var payment = await _paymentService.GetPaymentAsync(request.PaymentId);
+            return _mapper.Map<PaymentDetailsResponse>(payment);
         }
     }
 }

@@ -13,7 +13,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGatewayRepository", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BankService", "BankService\BankService.csproj", "{D5B8828F-7322-402D-BD77-39900B1C16DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaymentGatewayTest", "PaymentGatewayTest\PaymentGatewayTest.csproj", "{626CC4F3-7FF3-4372-B51E-4CFE8CEA5A06}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentGatewayTest", "PaymentGatewayTest\PaymentGatewayTest.csproj", "{626CC4F3-7FF3-4372-B51E-4CFE8CEA5A06}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentClient", "PaymentClient\PaymentClient.csproj", "{067B411D-26B1-4D36-A9D0-0AD6D481FDC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Sql_Scripts", "Sql_Scripts", "{5A0D1805-1B71-4B65-9653-87077E627B34}"
+	ProjectSection(SolutionItems) = preProject
+		Create_Payment_Table.sql = Create_Payment_Table.sql
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +52,10 @@ Global
 		{626CC4F3-7FF3-4372-B51E-4CFE8CEA5A06}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{626CC4F3-7FF3-4372-B51E-4CFE8CEA5A06}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{626CC4F3-7FF3-4372-B51E-4CFE8CEA5A06}.Release|Any CPU.Build.0 = Release|Any CPU
+		{067B411D-26B1-4D36-A9D0-0AD6D481FDC0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{067B411D-26B1-4D36-A9D0-0AD6D481FDC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{067B411D-26B1-4D36-A9D0-0AD6D481FDC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{067B411D-26B1-4D36-A9D0-0AD6D481FDC0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

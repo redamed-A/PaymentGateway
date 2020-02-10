@@ -52,6 +52,9 @@ namespace PaymentGateway
                    Version = "v1"
                 });
             });
+
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -62,6 +65,8 @@ namespace PaymentGateway
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder =>
+                builder.AllowAnyOrigin());
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {

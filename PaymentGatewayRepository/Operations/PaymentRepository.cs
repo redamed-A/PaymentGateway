@@ -17,12 +17,12 @@ namespace PaymentGatewayRepository.Operations
         }
         public Task<List<Payment>> GetPaymentsAsync()
         {
-            return Task.FromResult(_db.Payments.ToList());
+            return Task.FromResult(_db.Payment.ToList());
         }
 
         public Task<Payment> GetPaymentAsync(Guid paymentId)
         {
-            return Task.FromResult(_db.Payments.SingleOrDefault(s => s.PaymentId == paymentId));
+            return Task.FromResult(_db.Payment.SingleOrDefault(s => s.PaymentId == paymentId));
         }
 
         public Task<Payment> ProcessPaymentAsync(string cardNumber, string cvv, string expiryMonth, string expiryYear, string name,
@@ -43,7 +43,7 @@ namespace PaymentGatewayRepository.Operations
                 IsStatusPaymentSuccessful = statusPayment
             };
 
-             _db.Payments.Add(payment);
+             _db.Payment.Add(payment);
              _db.SaveChanges();
              return Task.FromResult(payment);
         }
