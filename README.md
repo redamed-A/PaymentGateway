@@ -3,6 +3,28 @@
 This is a solution to simulate a payment process, its include an APi .net core and a ReactJS client to consume this API.
 The API will allow a mechant to offer for their shoppers a way to pay for their product.
 
+## Requirements
+The product requirements for this initial phase are the following:
+1. A merchant should be able to process a payment through the payment gateway and receive either a
+successful or unsuccessful response
+2. A merchant should be able to retrieve the details of a previously made payment
+
+### Process a payment
+The payment gateway will need to provide merchants with a way to process a payment. To do this, the
+merchant should be able to submit a request to the payment gateway. A payment request should include
+appropriate fields such as the card number, expiry month/date, amount, currency, and cvv.
+
+Note: Simulating the bank
+In this solution  we mock out the Bank part of processing flow This component should be able to be switched out for a real bank once we move into
+production. We should assume that a bank response returns a unique identifier and a status that
+indicates whether the payment was successful.
+
+### Retrieving a payment’s details
+The second requirement for the payment gateway is to allow a merchant to retrieve details of a
+previously made payment using its identifier. Doing this will help the merchant with their reconciliation
+and reporting needs. The response should include a masked card number and card details along with a
+status code which indicates the result of the payment.
+
 ## Packagages:
 
   ####    - .Net core 3.0
