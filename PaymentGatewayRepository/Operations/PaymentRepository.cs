@@ -42,7 +42,6 @@ namespace PaymentGatewayRepository.Operations
                 BankIdTransaction = bankIdTransaction,
                 IsStatusPaymentSuccessful = statusPayment
             };
-
              _db.Payment.Add(payment);
              _db.SaveChanges();
              return Task.FromResult(payment);
