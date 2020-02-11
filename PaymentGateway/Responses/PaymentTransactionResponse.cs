@@ -7,7 +7,7 @@ namespace PaymentGateway.Responses
 {
     public class PaymentTransactionResponse
     {
-        public bool StatusPayment { get; set; }
+        public bool IsStatusPaymentSuccessful { get; set; }
         public Guid BankIdTransaction { get; set; }
     }
 }
