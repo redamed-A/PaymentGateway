@@ -34,6 +34,11 @@ status code which indicates the result of the payment.
   ####    - Microsoft.Extensions.Logging.Debug 3.0
   ####    - Automapper 7.0
 
+## Some ideas to enhance this application in the futur
+- Make more unit tests(until now i just put an example of unit test)
+- Add authentification
+- Add integaration tests
+- Add validation to inputs client and backend sides
 
 ## Installation:
 - Firt you need to create a database "PaymentDB" for this solution or another one and chnage the configuration in  appsettings.json.
